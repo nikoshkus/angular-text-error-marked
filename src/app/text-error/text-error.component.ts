@@ -35,8 +35,15 @@ export class TextErorrComponent implements OnDestroy, OnInit {
     .subscribe(changes =>  this.onChange(changes));
   }
 
-  public getMssage(): string {
-      return 'Title is required!';
+  public openSnackBar() {
+    if(this.requiredFormControl.hasError('required')) {
+      const message = 'Title is required!';
+      this.snackBar.open('Title is required!', 'Close',
+      {
+        panelClass: 'error-message',
+        duration: 5000,
+      });
+    }
   }
 
   onChange(event): void {
