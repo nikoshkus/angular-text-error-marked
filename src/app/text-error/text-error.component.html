@@ -5,6 +5,7 @@ middle-sm middle-xs middle-lg middle-md
 '>
   <div 
     class='col-xs-2 col-lg-1 col-md-1 col-sm-1 label '
+    [matTooltip]=""
     (click)="openSnackBar()"
     [ngClass]="{'is-error active-control': requiredFormControl.hasError('required')}"
   ><span>Title</span><span [hidden]="!requiredFormControl.hasError('required')"> *</span></div>
